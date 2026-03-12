@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premier Thảo Tissue | Hộp khăn giấy mềm mại - dai - thấm hút tốt</title>
+  <style>
+    :root{
+      --yellow:#f2d31b; --yellow-soft:#fff7c8; --gold:#d8b300; --blue:#2d4c9b;
+      --text:#1f2430; --muted:#5e6472; --card:#ffffff; --line:rgba(31,36,48,.08);
+      --shadow:0 16px 40px rgba(0,0,0,.12); --radius:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,#fffdf2 0%, #fff9d7 100%)}
+    .wrap{width:min(1180px, calc(100% - 32px)); margin:0 auto;}
+    .badge{display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.78); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.75); border-radius:999px; padding:10px 16px; font-size:14px; font-weight:700; color:var(--blue); box-shadow:0 8px 24px rgba(0,0,0,.08)}
+    header.hero{position:relative; overflow:hidden; padding:28px 0 72px; background:radial-gradient(circle at 15% 20%, rgba(255,255,255,.85), transparent 34%),radial-gradient(circle at 85% 18%, rgba(255,255,255,.55), transparent 28%),linear-gradient(135deg, #f9e64a 0%, #f1d21a 38%, #ffe992 100%)}
+    header.hero::before{content:""; position:absolute; inset:0; opacity:.13; background-image: linear-gradient(45deg, rgba(45,76,155,.14) 25%, transparent 25%, transparent 50%, rgba(45,76,155,.14) 50%, rgba(45,76,155,.14) 75%, transparent 75%, transparent); background-size: 32px 32px; pointer-events:none}
+    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:32px; position:relative; z-index:2}
+    .brand{display:flex; align-items:center; gap:14px; font-weight:900; letter-spacing:.4px}
+    .brand-mark{width:44px; height:44px; border-radius:14px; background:#111; color:#fff; display:grid; place-items:center; font-size:20px; box-shadow:var(--shadow)}
+    .brand small{display:block; font-weight:700; color:var(--blue); opacity:.9}
+    .hero-grid{display:grid; grid-template-columns:1.02fr .98fr; gap:32px; align-items:center; position:relative; z-index:2}
+    .hero-copy h1{font-size:clamp(38px, 6vw, 72px); line-height:.95; margin:18px 0 18px; letter-spacing:-1.8px}
+    .hero-copy h1 span{display:block; color:var(--blue)}
+    .hero-copy p{font-size:18px; line-height:1.7; color:#283246; max-width:680px; margin:0 0 28px}
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; text-decoration:none; border-radius:16px; padding:16px 22px; font-weight:800; transition:.2s ease; border:1px solid transparent; cursor:pointer}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:#111; color:#fff; box-shadow:0 12px 24px rgba(17,17,17,.18)}
+    .btn.secondary{background:rgba(255,255,255,.72); color:var(--blue); border-color:rgba(45,76,155,.14)}
+    .hero-points{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px}
+    .point{background:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.8); border-radius:20px; padding:16px; box-shadow:0 12px 28px rgba(0,0,0,.08)}
+    .point b{display:block; margin-bottom:6px; font-size:15px}
+    .point span{font-size:13px; color:var(--muted); line-height:1.5}
+    .hero-visual{position:relative}
+    .hero-card{background:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.9); border-radius:32px; padding:18px; box-shadow:0 24px 60px rgba(0,0,0,.14)}
+    .hero-card img{width:100%; display:block; border-radius:24px}
+    .float-card{position:absolute; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow); border-radius:20px; padding:14px 16px; max-width:230px}
+    .float-top{top:-8px; right:-8px} .float-bottom{left:-12px; bottom:28px}
+    .float-card strong{display:block; font-size:15px; margin-bottom:4px} .float-card span{font-size:13px; color:var(--muted); line-height:1.5}
+    section{padding:72px 0}
+    .section-head{display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px}
+    .section-head h2{font-size:clamp(28px, 3.6vw, 44px); margin:0; line-height:1.05}
+    .section-head p{margin:0; color:var(--muted); max-width:700px; line-height:1.7}
+    .cards{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:24px; padding:22px; box-shadow:0 12px 30px rgba(0,0,0,.05)}
+    .card .icon{width:42px; height:42px; border-radius:14px; background:var(--yellow-soft); color:var(--blue); display:grid; place-items:center; font-weight:900; margin-bottom:16px}
+    .card h3{margin:0 0 8px; font-size:18px} .card p{margin:0; color:var(--muted); line-height:1.65; font-size:14px}
+    .gallery{display:grid; grid-template-columns:1.08fr .92fr; gap:18px}
+    .gallery .shot, .stack{background:#fff; border-radius:28px; overflow:hidden; border:1px solid var(--line); box-shadow:0 14px 36px rgba(0,0,0,.06)}
+    .gallery img{width:100%; display:block}
+    .stack{display:grid; grid-template-rows:1fr 1fr}
+    .masonry{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:18px}
+    .caption{padding:18px 20px; border-top:1px solid var(--line); font-size:14px; color:var(--muted); line-height:1.6}
+    .pricing{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .price-card{background:#fff; border:1px solid var(--line); border-radius:28px; padding:26px; box-shadow:0 16px 36px rgba(0,0,0,.06); position:relative; overflow:hidden}
+    .price-card.featured{background:linear-gradient(180deg,#fffceb 0%, #fff4b5 100%); border-color:rgba(216,179,0,.35); transform:translateY(-6px)}
+    .price-card .tag{display:inline-block; padding:8px 12px; border-radius:999px; background:#111; color:#fff; font-size:12px; font-weight:800; letter-spacing:.4px; margin-bottom:18px}
+    .price-card h3{margin:0 0 8px; font-size:24px} .price-card .price{font-size:42px; font-weight:900; letter-spacing:-1px; margin:10px 0 14px}
+    .price-card ul{list-style:none; padding:0; margin:0 0 22px} .price-card li{padding:9px 0; border-bottom:1px dashed rgba(31,36,48,.12); color:#364052}
+    .testimonials{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
+    .quote{background:#fff; border-radius:24px; border:1px solid var(--line); padding:24px; box-shadow:0 14px 32px rgba(0,0,0,.05)}
+    .quote p{margin:0 0 16px; line-height:1.75; color:#313949} .quote b{display:block; font-size:15px} .quote span{font-size:13px; color:var(--muted)}
+    .faq{display:grid; gap:14px}
+    details{background:#fff; border-radius:20px; border:1px solid var(--line); padding:18px 20px; box-shadow:0 10px 26px rgba(0,0,0,.04)}
+    summary{cursor:pointer; font-weight:800; list-style:none} summary::-webkit-details-marker{display:none}
+    details p{margin:14px 0 0; color:var(--muted); line-height:1.7}
+    .cta{background:linear-gradient(135deg, #101522 0%, #243a7a 100%); color:#fff; border-radius:34px; padding:36px; box-shadow:0 22px 56px rgba(16,21,34,.28); display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center}
+    .cta h3{margin:0 0 8px; font-size:clamp(28px,3vw,40px)} .cta p{margin:0; color:rgba(255,255,255,.78); line-height:1.7; max-width:720px}
+    footer{padding:26px 0 60px; color:#5a6270} .footer-row{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap} .pill{display:inline-flex; padding:10px 14px; border:1px solid var(--line); border-radius:999px; background:#fff}
+    .modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(10,14,20,.55); backdrop-filter:blur(6px); z-index:99} .modal.show{display:flex}
+    .modal-box{max-width:520px; width:100%; background:#fff; border-radius:28px; padding:28px; box-shadow:0 30px 80px rgba(0,0,0,.25)}
+    .modal-box h3{margin:0 0 10px; font-size:28px} .modal-box p{margin:0 0 20px; color:var(--muted); line-height:1.7}
+    .modal-actions{display:flex; gap:12px; flex-wrap:wrap} .mini-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px} .mini{background:#fff7d0; border-radius:18px; padding:14px; font-size:14px; color:#414857}
+    @media (max-width: 1024px){.hero-grid,.gallery,.cta{grid-template-columns:1fr}.cards,.pricing,.testimonials,.masonry{grid-template-columns:repeat(2,minmax(0,1fr))}.float-top{right:10px}.float-bottom{left:10px}}
+    @media (max-width: 720px){.cards,.pricing,.testimonials,.hero-points,.masonry{grid-template-columns:1fr}.section-head,.topbar{display:block}.section-head p{margin-top:10px}.hero-copy p{font-size:16px}.hero-card{padding:12px}.float-card{position:static; margin-top:12px; max-width:none}.hero-actions{flex-direction:column}.btn{width:100%}.modal-actions{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-mark">P</div>
+          <div>
+            PREMIER THẢO TISSUE
+            <small>Hộp khăn giấy 280 tờ • mềm mại • dai • thấm hút tốt</small>
+          </div>
+        </div>
+        <div class="badge">Đại lý phân phối: Đặng Thị Thu Thảo</div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="badge">Bộ hình sản phẩm cập nhật mới</div>
+          <h1>Premier <span>Thảo Tissue</span></h1>
+          <p>
+            Dòng hộp khăn giấy với thiết kế nhận diện nổi bật, quy cách gọn gàng cho bàn làm việc, quầy tiếp khách và các không gian sử dụng hàng ngày.
+            Sản phẩm hướng tới cảm giác sạch, sáng và chỉn chu ngay từ bao bì, phù hợp cho bàn làm việc, quầy tiếp khách, phòng họp và nhiều không gian sử dụng hằng ngày.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#pricing">Xem bảng giá</a>
+            <a class="btn secondary" href="#gallery">Xem hình sản phẩm</a>
+          </div>
+          <div class="hero-points">
+            <div class="point"><b>280 tờ / hộp</b><span>Phù hợp đặt tại bàn làm việc, quầy lễ tân hoặc khu vực tiếp khách.</span></div>
+            <div class="point"><b>Nhận diện đồng bộ</b><span>Màu sắc vàng – xanh bám theo bao bì để tạo cảm giác thương hiệu rõ ràng.</span></div>
+            <div class="point"><b>Hình ảnh thực tế</b><span>Bộ ảnh gồm packshot, ảnh trưng bày, ảnh người đại diện và hình cấu trúc đóng gói để tăng độ tin cậy.</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="assets/holding.jpg" alt="Đại lý Thu Thảo cầm sản phẩm Premier Thảo Tissue" />
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Điểm nổi bật của sản phẩm</h2>
+        <p>Thiết kế bao bì nổi bật, quy cách gọn gàng và màu sắc dễ nhận diện giúp sản phẩm phù hợp cho nhiều không gian sử dụng hằng ngày.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">01</div><h3>Thiết kế bao bì nổi bật</h3><p>Tông vàng sáng kết hợp xanh đậm giúp sản phẩm nổi khối tốt trên bàn, kệ trưng bày và ảnh chụp.</p></article>
+        <article class="card"><div class="icon">02</div><h3>Quy cách gọn gàng</h3><p>Dạng hộp chữ nhật dễ đặt ở nhiều vị trí sử dụng, thuận tiện cho văn phòng và không gian gia đình.</p></article>
+        <article class="card"><div class="icon">03</div><h3>Hình ảnh đồng bộ</h3><p>Bộ ảnh sản phẩm gồm ảnh packshot, ảnh trưng bày, ảnh cầm hộp và hình cấu trúc đóng gói để tăng độ nhận diện.</p></article>
+        <article class="card"><div class="icon">04</div><h3>Dễ sử dụng hằng ngày</h3><p>Thiết kế hộp gọn, dễ đặt trên bàn làm việc, kệ tủ hoặc quầy tiếp khách, thuận tiện khi cần rút giấy nhanh.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Hình ảnh sản phẩm & trưng bày</h2>
+        <p></p>
+      </div>
+      <div class="gallery">
+        <div class="shot">
+          <img src="assets/factory-team.jpg" alt="Nhóm nhân sự chụp cùng sản phẩm Premier Thảo Tissue" />
+          <div class="caption">Hình ảnh thực tế tại khu vực chuẩn bị hàng, phù hợp cho phần giới thiệu năng lực cung ứng và tạo cảm giác vận hành rõ ràng.</div>
+        </div>
+        <div class="stack">
+          <div class="shot">
+            <img src="assets/mockup.jpg" alt="Mockup 3D hộp khăn giấy Premier Thảo Tissue" />
+            <div class="caption">Ảnh packshot giúp làm nổi bật bao bì, màu sắc chủ đạo và hình dáng hộp theo góc nhìn thương mại.</div>
+          </div>
+          <div class="shot">
+            <img src="assets/dieline.jpg" alt="Dieline đóng gói hộp khăn giấy Premier Thảo Tissue" />
+            <div class="caption">Hình ảnh cấu trúc đóng gói dùng cho phần quy cách sản phẩm, giúp người xem hiểu rõ hơn về hộp và cách hoàn thiện bao bì.</div>
+          </div>
+        </div>
+      </div>
+      <div class="masonry">
+        <div class="shot">
+          <img src="assets/lineup.jpg" alt="Cụm sản phẩm Premier Thảo Tissue nhiều hộp" />
+          <div class="caption">Ảnh trưng bày nhiều hộp phù hợp cho phần giới thiệu quy mô, trưng bày sản phẩm và năng lực cung ứng.</div>
+        </div>
+        <div class="shot">
+        
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Bảng giá tham khảo</h2>
+        <p>Bảng giá tham khảo dành cho nhu cầu sử dụng cá nhân, phòng ban và khu vực tiếp khách. Quy cách được trình bày rõ ràng, dễ theo dõi.</p>
+      </div>
+      <div class="pricing">
+        <article class="price-card">
+          <div class="tag">LẺ</div>
+          <h3>Gói cá nhân</h3>
+          <div class="price">10.000đ</div>
+          <ul>
+            <li>1 hộp khăn giấy 280 tờ</li>
+            <li>Phù hợp bàn làm việc cá nhân</li>
+            <li>Thiết kế hộp gọn gàng, dễ trưng bày</li>
+            <li>Phù hợp cho các buổi họp, tiếp khách hoặc sử dụng cá nhân</li>
+          </ul>
+          <button class="btn secondary open-order">Đặt 1 hộp</button>
+        </article>
+        <article class="price-card featured">
+          <div class="tag">PHỔ BIẾN</div>
+          <h3>Gói phòng ban</h3>
+          <div class="price">45.000đ</div>
+          <ul>
+            <li>5 hộp / cụm bàn nội bộ</li>
+            <li>Tiết kiệm hơn mua lẻ</li>
+            <li>Phù hợp khu vực tiếp khách hoặc họp nhóm</li>
+            <li>Phù hợp cho khu vực cần lượng sử dụng ổn định</li>
+          </ul>
+          <button class="btn primary open-order">Đặt gói phổ biến</button>
+        </article>
+        <article class="price-card">
+          <div class="tag">SỈ NHỎ</div>
+          <h3>Gói trưng bày</h3>
+          <div class="price">90.000đ</div>
+          <ul>
+            <li>10 hộp giao trong khu vực nội bộ</li>
+            <li>Phù hợp set up bàn lễ tân / pantry</li>
+            <li>Miễn phí giao trong phạm vi gần</li>
+            <li>Dành cho nơi cần sản phẩm luôn sẵn sàng</li>
+          </ul>
+          <button class="btn secondary open-order">Nhận tư vấn</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Phản hồi tham khảo</h2>
+        <p>Một số nhận xét tham khảo về bao bì, hình ảnh sản phẩm và cảm giác sử dụng trong không gian văn phòng hằng ngày.</p>
+      </div>
+      <div class="testimonials">
+        <article class="quote"><p>“Bao bì sáng và chụp lên hình rất bắt mắt. Đặt ở bàn làm việc hoặc khu tiếp khách đều nổi bật.”</p><b>Nhân sự văn phòng</b><span>Ưu tiên sản phẩm gọn, sạch và dễ bày trí</span></article>
+        <article class="quote"><p>“Ảnh sản phẩm chỉn chu, màu sắc nổi bật và nhìn rất hợp khi đặt ở khu vực tiếp khách hoặc bàn làm việc.”</p><b>Khách xem sản phẩm</b><span>Đánh giá cao sự đồng bộ giữa bao bì và hình ảnh trưng bày</span></article>
+        <article class="quote"><p>“Góc hình cầm sản phẩm và ảnh trưng bày theo nhóm giúp phần giới thiệu trực quan và dễ tạo thiện cảm.”</p><b>Nhân sự phụ trách trưng bày</b><span>Ưu tiên cách trình bày rõ ràng, gần gũi và dễ xem</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Câu hỏi thường gặp</h2>
+        <p>Một số câu hỏi thường gặp về quy cách, không gian sử dụng và nhu cầu tham khảo hình ảnh sản phẩm.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Sản phẩm phù hợp cho không gian nào?</summary><p>Phù hợp bàn làm việc, quầy lễ tân, phòng họp, khu tiếp khách và các không gian cần một hộp khăn giấy gọn gàng, sáng màu, dễ phối cảnh.</p></details>
+        <details><summary>Sản phẩm có phù hợp cho khu vực tiếp khách không?</summary><p>Có. Bao bì nổi bật, dáng hộp gọn và màu sắc sáng giúp sản phẩm phù hợp với quầy lễ tân, bàn họp và khu vực tiếp khách.</p></details>
+        <details><summary>Sản phẩm có phù hợp dùng hằng ngày không?</summary><p>Có. Thiết kế hộp gọn gàng, dễ đặt ở nhiều vị trí và phù hợp cho nhu cầu sử dụng thường xuyên trong văn phòng hoặc gia đình.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h3>Liên hệ tham khảo thêm thông tin sản phẩm</h3>
+          <p>Premier Thảo Tissue phù hợp cho bàn làm việc, khu tiếp khách, pantry, phòng họp và nhiều không gian cần một hộp khăn giấy gọn gàng, sáng màu và dễ nhận diện.</p>
+          
+        </div>
+        <div><button class="btn primary open-order">Xem popup đặt hàng</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>© 2026 Premier Thảo Tissue • Hình ảnh giới thiệu sản phẩm</div>
+      <div class="pill">Mềm mại • Dai • Thấm hút tốt</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="orderModal" aria-hidden="true">
+    <div class="modal-box">
+      <h3>Yêu cầu đã được ghi nhận</h3>
+      <p>Cảm ơn bạn đã quan tâm đến <b>Premier Thảo Tissue</b>. Bộ phận phụ trách sẽ sớm phản hồi để tư vấn số lượng phù hợp. Trong trường hợp bạn vừa quét QR từ bàn làm việc của ai đó, xin chúc mừng — bạn vừa gặp một màn giới thiệu sản phẩm khá có tâm.</p>
+      <div class="modal-actions">
+        <button class="btn primary" id="closeModal">Đóng</button>
+        <a class="btn secondary" href="#gallery">Xem lại hình sản phẩm</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('orderModal');
+    document.querySelectorAll('.open-order').forEach(btn => btn.addEventListener('click', () => modal.classList.add('show')));
+    document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('show'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show'); });
+  </script>
+</body>
+</html>
